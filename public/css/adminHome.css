@@ -1,0 +1,38 @@
+body{
+    min-width: 800px;
+}
+
+#navigation{
+    border-bottom: 2px #7e83ff solid;
+    float: left;
+    width: 100%;
+}
+
+.options{
+    list-style:none;
+}
+
+.options li{
+    color: #272729;
+    margin-left: 25px;
+    float: left;
+    cursor: pointer;
+}
+
+#title{
+    margin-left: 3%;
+    color: #7e83ff;
+    font-size: 25px;
+    font-weight: 400;
+    align-content: center;
+    float: left;
+}
+
+#subHtml{
+    position: absolute;
+    left:7px;
+    top: 117px;
+    width: auto;
+    height: auto;
+
+}
