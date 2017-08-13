@@ -1,0 +1,46 @@
+body{
+    background: url("../images/loginBack.jpg");
+    background-size: 100%;
+    height: 100%;
+}
+
+.loginField{
+    height:217px;
+    width: 360px;
+    margin-left:34%;
+    padding-top:1px;
+    margin-top:15%;//外边距
+}
+
+.loginTitle{
+    color: #ffffff;
+    border-radius:5px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top:-2%;
+}
+
+.FillContent{
+    width:120px;
+}
+
+.loginSelect{
+    color: #ffffff;
+    height:20px;
+    width:100px;
+    display:inline-block;
+    text-align: center;
+    margin-left:14%;
+    margin-top:3%;//外边距
+}
+
+#loginButton{
+    margin-left: 39%;
+    margin-top: 9%;
+    width: 77px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
+}

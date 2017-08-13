@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link rel = stylesheet type = "text/css" href="../public/stylesheets/login.css"/>
+    <script type = "text/javascript" src = "../public/javascripts/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src = "../public/javascripts/login.js"></script>
+
+</head>
+<body>
+    <fieldset class = "loginField">
+        <div class = "loginTitle">
+            <h2 id = "expertFont">管理员登陆</h2>
+        </div>
+
+        <div class = "loginForm">
+            <form id = loginForm   method="post" >
+
+                <div>
+                    <label class = "loginSelect" for = "name">用户名：</label>
+                    <input type = "text" id = "name"  class = "FillContent" name = "name"/>
+                </div>
+
+                <div>
+                    <label class = "loginSelect" for = "password">密码：</label>
+                    <input type = "password" id = "password" class = "FillContent" name = "password" />
+                </div>
+
+                <div>
+                    <button  type = "button" id = "loginButton">登陆</button>
+                </div>
+
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
