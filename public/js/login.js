@@ -2,8 +2,6 @@
 $(document).ready(function(){
     $("#loginButton").click( function() {
 
-        alert("用户名或密码不正确！");
-        
         $.post("/login_verify",
             {
                 username: $("#username").val(),
@@ -17,5 +15,6 @@ $(document).ready(function(){
                     alert("用户名或者密码不正确!");
                 }
             });
+
     });
 });

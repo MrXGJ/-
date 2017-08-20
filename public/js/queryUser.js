@@ -10,7 +10,7 @@ $(document).ready(function () {
             },
             function (data) {
 
-                //先输出上次的查询信息
+                //先删除上次的查询信息
                 $(".queryR").remove();
 
                 //根据查询结果填写表格
@@ -23,23 +23,32 @@ $(document).ready(function () {
         )
     });
 
+    //关闭详细窗口
+    $("#closeW").click(function () {
+        $(".subWindow").css("display","none");
+    });
+
+    //详细窗口可移动化
+    enableDrag($(".subWindow"),$(".subWindow"));
+
 });
 
 
 //模拟数据
-function getData(){
-    var result = [];
-    for(var i = 0 ; i < 120; i++){
-        result[i] = {};
-        result[i].acc = "账号"+i;
-        result[i].nickname = "昵称"+i;
-        result[i].name = "姓名"+i;
-        result[i].college = "学院"+i;
-        result[i].credit = "信用"+i;
-    }
-    return result;
-}
+// function getData(){
+//     var result = [];
+//     for(var i = 0 ; i < 120; i++){
+//         result[i] = {};
+//         result[i].acc = "账号"+i;
+//         result[i].nickname = "昵称"+i;
+//         result[i].name = "姓名"+i;
+//         result[i].college = "学院"+i;
+//         result[i].credit = "信用"+i;
+//     }
+//     return result;
+// }
 
+//根据数据创建表格行
 function createRow(result,length,displayLength){
     if(length > displayLength){
 
@@ -171,6 +180,31 @@ function createRow(result,length,displayLength){
         }
     }
     addDisplayEvent();//为查看详细信息添加事件
+}
+
+//实现窗口可拖动
+function enableDrag(obj,dragField){
+    //窗口的移动实现
+    var moveFlag = false;
+    var dx,dy;//鼠标距离控件的相对位置
+
+    //更新子窗口的位置
+    dragField.mousedown(function (e) {
+        moveFlag = true;
+        dx = e.pageX - parseInt(obj.css("left"));//字符串转化为整数
+        dy = e.pageY - parseInt(obj.css('top'));
+    })
+        .mousemove(function (e) {
+            if(moveFlag){//移动鼠标时计算控件左上角的坐标
+                var newX = e.pageX - dx;
+                var newY = e.pageY - dy;
+                obj.css({"left":newX,"top":newY});
+            }
+
+        })
+        .mouseup(function () {
+            moveFlag = false;
+        });
 }
 
 //为查看详细信息添加事件
