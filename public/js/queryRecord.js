@@ -3,33 +3,33 @@ $(document).ready(function () {
 
     //查询按钮的事件
     $("#queryButton").click(function () {
-        $.post("/adminHome/queryUserData",
-            {
-                searchCondition:$("#searchCondition")
-            },
-            function (data) {
-
-                //先输出上次的查询信息
-                $(".queryR").remove();
-
-                //根据查询结果填写表格
-                var result = data.result;//json格式参考模拟数据函数getData
-                var length = result.length;
-                var displayLength = 12;
-                createRow(result,length,displayLength);
-
-            }
-        )
+        // $.post("/adminHome/queryRecordData",
+        //     {
+        //         searchCondition:$("#searchCondition")
+        //     },
+        //     function (data) {
+        //
+        //         //先输出上次的查询信息
+        //         $(".queryR").remove();
+        //
+        //         //根据查询结果填写表格
+        //         var result = data.result;//json格式参考模拟数据函数getData
+        //         var length = result.length;
+        //         var displayLength = 12;
+        //         createRow(result,length,displayLength);
+        //
+        //     }
+        // )
 
 
         //测试数据
 
-        // $(".queryR").remove();
-        //
-        // var result = getData();//json格式参考模拟数据函数getData
-        // var length = result.length;
-        // var displayLength = 12;
-        // createRow(result,length,displayLength);
+        $(".queryR").remove();
+
+        var result = getData();//json格式参考模拟数据函数getData
+        var length = result.length;
+        var displayLength = 12;
+        createRow(result,length,displayLength);
     });
 
 
