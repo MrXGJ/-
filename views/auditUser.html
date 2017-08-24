@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>queryProduct</title>
+
+    <link rel = stylesheet type = "text/css" href="../public//css/auditUser.css"/>
+    <script type = "text/javascript" src = "../public/js/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src = "../public/js/auditUser.js"></script>
+
+</head>
+<body>
+<div id = "queryUserHtml">
+    <div id = "queryUserTitle">
+        用户列表
+        <img class = "alert" src="/img/alert.png"/>
+    </div>
+    <div id = "queryDiv">
+        <img class = "searchIco" src="../public/img/search.png"/>
+        <input type="search" id = searchCondition  placeholder="请输入检索条件" />
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <!--<label>加入信用范围：</label>-->
+        <!--<input type="number" id = "creditFrom" class = "creditSearch" min="1"/>-->
+        <!--<label>至</label>-->
+        <!--<input type="number" id = "creditTo" class = "creditSearch" max="100"/>-->
+        <!--&nbsp;&nbsp;-->
+        <button id = "queryButton">查询</button>
+    </div>
+    <table id = "queryTable">
+        <tr style="text-align: center">
+            <th>账号</th>
+            <th>密码</th>
+            <th>学生号</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--增加显示详细信息的窗口-->
+<div class = "subWindow" >
+    <div id = "moveAble">
+        <small style="margin-left: 5px;color:#0c1eff">详细信息</small>
+        <button class = "WinButton" id = "closeW">关闭</button>
+    </div>
+    <table>
+        <tr>
+            <td colspan="2" rowspan="3" >
+                <img id = 'photo' alt="头像" src = "" >
+            </td>
+            <td>账号</td>
+            <td id = 'acc'></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td id = 'pwd'></td>
+        </tr>
+        <tr>
+            <td>昵称</td>
+            <td id = 'nickname'></td>
+        </tr>
+        <tr>
+            <td>学生号</td>
+            <td id = 'studentID'></td>
+            <td>真实姓名</td>
+            <td id = 'name'></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td id = 'sex'></td>
+            <td>学院</td>
+            <td id = 'college'></td>
+        </tr>
+        <tr>
+            <td colspan="4" rowspan="2">
+                <img id = 'studentCard' alt="学生证照片" src = "" >
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

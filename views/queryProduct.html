@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>queryProduct</title>
+
+    <link rel = stylesheet type = "text/css" href="../public//css/queryProduct.css"/>
+    <script type = "text/javascript" src = "../public/js/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src = "../public/js/queryProduct.js"></script>
+
+</head>
+<body>
+<div id = "queryUserHtml">
+    <div id = "queryUserTitle">
+        查询列表
+        <img class = "alert" src="/img/alert.png"/>
+    </div>
+    <div id = "queryDiv">
+        <img class = "searchIco" src="../public/img/search.png"/>
+        <input type="search" id = searchCondition  placeholder="请输入检索条件" />
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <!--<label>加入信用范围：</label>-->
+        <!--<input type="number" id = "creditFrom" class = "creditSearch" min="1"/>-->
+        <!--<label>至</label>-->
+        <!--<input type="number" id = "creditTo" class = "creditSearch" max="100"/>-->
+        <!--&nbsp;&nbsp;-->
+        <button id = "queryButton">查询</button>
+    </div>
+    <table id = "queryTable">
+        <tr style="text-align: center">
+            <th>商品码</th>
+            <th>发布的用户</th>
+            <th>状态</th>
+            <th>商品名称</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--增加显示详细信息的窗口-->
+<div class = "subWindow" >
+    <div id = "moveAble">
+        <small style="margin-left: 5px;color:#0c1eff">详细信息</small>
+        <button class = "WinButton" id = "closeW">关闭</button>
+    </div>
+    <table>
+        <tr>
+            <td colspan="2" rowspan="3" >
+                <img id = 'photo' alt="商品图片" src = "" >
+            </td>
+            <td>商品码</td>
+            <td id = 'productID'></td>
+        </tr>
+        <tr>
+            <td>发布的用户</td>
+            <td id = 'acc'></td>
+        </tr>
+        <tr>
+            <td>状态</td>
+            <td id = 'status'></td>
+        </tr>
+        <tr>
+            <td>商品名称</td>
+            <td id = 'name'></td>
+            <td>价格</td>
+            <td id = 'price'></td>
+        </tr>
+        <tr>
+            <td colspan="4" rowspan="2" id = 'detail'></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

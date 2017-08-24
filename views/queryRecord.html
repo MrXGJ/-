@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>queryProduct</title>
+
+    <link rel = stylesheet type = "text/css" href="../public//css/queryProduct.css"/>
+    <script type = "text/javascript" src = "../public/js/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src = "../public/js/queryProduct.js"></script>
+
+</head>
+<body>
+<div id = "queryUserHtml">
+    <div id = "queryUserTitle">
+        查询列表
+        <img class = "alert" src="/img/alert.png"/>
+    </div>
+    <div id = "queryDiv">
+        <img class = "searchIco" src="../public/img/search.png"/>
+        <input type="search" id = searchCondition  placeholder="请输入检索条件" />
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <!--<label>加入信用范围：</label>-->
+        <!--<input type="number" id = "creditFrom" class = "creditSearch" min="1"/>-->
+        <!--<label>至</label>-->
+        <!--<input type="number" id = "creditTo" class = "creditSearch" max="100"/>-->
+        <!--&nbsp;&nbsp;-->
+        <button id = "queryButton">查询</button>
+    </div>
+    <table id = "queryTable">
+        <tr style="text-align: center">
+            <th>订单号</th>
+            <th>商品码</th>
+            <th>下单时间</th>
+            <th>订单状态</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--增加显示详细信息的窗口-->
+<div class = "subWindow" >
+    <div id = "moveAble">
+        <small style="margin-left: 5px;color:#0c1eff">详细信息</small>
+        <button class = "WinButton" id = "closeW">关闭</button>
+    </div>
+    <table>
+        <tr>
+            <td>订单号</td>
+            <td id = 'recordID'></td>
+            <td>商品码</td>
+            <td id = 'productID'></td>
+        </tr>
+        <tr>
+            <td>卖家账号</td>
+            <td id = 'seller'></td>
+            <td>买家账号</td>
+            <td id = 'buyer'></td>
+        </tr>
+        <tr>
+            <td>下单时间</td>
+            <td id = 'time'></td>
+            <td>订单状态</td>
+            <td id = 'status'></td>
+        </tr>
+        <tr>
+            <td>卖家给买家的评分</td>
+            <td id = 'sellerMark'></td>
+            <td>买家给卖家的评分</td>
+            <td id = 'buyerMark'></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
