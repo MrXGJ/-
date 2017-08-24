@@ -2,32 +2,25 @@ $(document).ready(function () {
 
     //查询按钮的事件
     $("#queryButton").click(function () {
-        // $.post("/adminHome/queryUserData",
-        //     {
-        //         searchCondition:$("#searchCondition"),
-        //         creditFrom:$("#creditFrom"),
-        //         creditTo:$("#creditTo")
-        //     },
-        //     function (data) {
-        //
-        //         //先删除上次的查询信息
-        //         $(".queryR").remove();
-        //
-        //         //根据查询结果填写表格
-        //         var result = data.result;//json格式参考模拟数据函数getData
-        //         var length = result.length;
-        //         var displayLength = 12;
-        //         createRow(result,length,displayLength);
-        //
-        //     }
-        // )
+        $.post("/adminHome/queryUserData",
+            {
+                searchCondition:$("#searchCondition"),
+                creditFrom:$("#creditFrom"),
+                creditTo:$("#creditTo")
+            },
+            function (data) {
 
-        $(".queryR").remove();
+                //先删除上次的查询信息
+                $(".queryR").remove();
 
-        var result = getData();//json格式参考模拟数据函数getData
-        var length = result.length;
-        var displayLength = 12;
-        createRow(result,length,displayLength);
+                //根据查询结果填写表格
+                var result = eval(data.result);//json格式参考模拟数据函数getData
+                var length = result.length;
+                var displayLength = 12;
+                createRow(result,length,displayLength);
+
+            }
+        );
     });
 
 
@@ -44,18 +37,18 @@ $(document).ready(function () {
 
 
 //模拟数据
-function getData(){
-    var result = [];
-    for(var i = 0 ; i < 120; i++){
-        result[i] = {};
-        result[i].acc = "账号"+i;
-        result[i].nickname = "昵称"+i;
-        result[i].name = "姓名"+i;
-        result[i].college = "学院"+i;
-        result[i].credit = "信用"+i;
-    }
-    return result;
-}
+// function getData(){
+//     var result = [];
+//     for(var i = 0 ; i < 120; i++){
+//         result[i] = {};
+//         result[i].acc = "账号"+i;
+//         result[i].nickname = "昵称"+i;
+//         result[i].name = "姓名"+i;
+//         result[i].college = "学院"+i;
+//         result[i].credit = "信用"+i;
+//     }
+//     return result;
+// }
 
 //根据数据创建表格行
 function createRow(result,length,displayLength){

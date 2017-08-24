@@ -73,6 +73,41 @@ $(document).ready(function () {
         });
     });
 
+    //点击加载审核界面
+    $("#auditUser").click(function(){
+        $.get("/adminHome/auditUser",function(data){
+            $(".subHtml").html(data)
+                .ready(function () {
+                    //校准宽度与高度
+                    $("#queryUserHtml").width($("#navigation").width())
+                        .height(($(document).height()-120));
+                });
+        });
+    });
+
+    //点击加载订单界面
+    $("#queryRecord").click(function(){
+        $.get("/adminHome/queryRecord",function(data){
+            $(".subHtml").html(data)
+                .ready(function () {
+                    //校准宽度与高度
+                    $("#queryUserHtml").width($("#navigation").width())
+                        .height(($(document).height()-120));
+                });
+        });
+    });
+
+    //点击加载商品界面
+    $("#queryProduct").click(function(){
+        $.get("/adminHome/queryProduct",function(data){
+            $(".subHtml").html(data)
+                .ready(function () {
+                    //校准宽度与高度
+                    $("#queryUserHtml").width($("#navigation").width())
+                        .height(($(document).height()-120));
+                });
+        });
+    });
 
 });
 
